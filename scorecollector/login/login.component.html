@@ -1,0 +1,18 @@
+<p>
+  login works!
+</p>
+
+<firebase-ui
+  (signInSuccessWithAuthResult)="successSignIn"
+  (signInFailure)="errorSignIn"
+></firebase-ui>
+
+<!--
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+-->
+<div *ngIf="(user | async) || {} as user">
+  <div *ngIf="user.uid">
+    <p>すでにログインしています。</p>
+    <button mat-raised-button color="accent" (click)="logout()">Log out</button>
+  </div>
+</div>

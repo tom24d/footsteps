@@ -1,0 +1,39 @@
+
+
+<div>
+  <form class="my-forms">
+    <mat-form-field class="my-full-width">
+      <input placeholder="Golf Course Name" matInput [formControl]="myFormCtrl" [matAutocomplete]="auto">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let s of suggestions" (onSelectionChange)="selectSug(s.golfCourseId, s.golfCourseName)" (click)="selectSug(s.golfCourseId, s.golfCourseName)" [value]="s.golfCourseName">
+          {{s.golfCourseName}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+  <!--
+  <button mat-raised-button color="accent" (click)="searchignit()">
+    Search
+  </button>
+  -->
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="cname" [ngModelOptions]="{standalone: true}" placeholder="Competition Name">
+    </mat-form-field>
+  </form>
+</div>
+
+<button mat-raised-button color="accent" (click)="makingCompe()">
+  Make
+</button>
+
+Makeを押すと、ポップアップ、回転プログレスバー、成功ならURLの表示、失敗なら原因の表示と戻るボタン
+<!--
+<mat-list role="list">
+  <mat-list-item *ngFor="let s of suggestions" (click)="selectSug(s.golfCourseId, s.golfCourseName)">
+    {{s.golfCourseName}}
+  </mat-list-item>
+</mat-list>
+-->

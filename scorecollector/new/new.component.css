@@ -1,0 +1,9 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~firebaseui/dist/firebaseui.css";
+.my-forms{
+  align-items: center;
+  min-width: 50px;
+}
+.my-full-width{
+  width: 80%;
+}
